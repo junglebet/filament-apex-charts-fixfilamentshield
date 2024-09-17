@@ -33,6 +33,11 @@ class ApexChartWidget extends Widget implements HasForms
 
     public ?array $options = null;
 
+    public function getHeading(): ?string
+    {
+        return self::$heading ?? null;
+    }
+
     /**
      * Initializes the options for the object.
      */
@@ -47,9 +52,7 @@ class ApexChartWidget extends Widget implements HasForms
         }
     }
 
-    public function on(): void
-    {
-    }
+    public function on(): void {}
 
     public function render(): View
     {
@@ -63,7 +66,7 @@ class ApexChartWidget extends Widget implements HasForms
      */
     protected function getChartId(): ?string
     {
-        return static::$chartId ?? 'apexChart_'.Str::random(10);
+        return static::$chartId ?? 'apexChart_' . Str::random(10);
     }
 
     /**
